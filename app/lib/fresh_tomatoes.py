@@ -20,7 +20,12 @@ def start_webserver():
 
   # check if there is a parameter
   if sys.argv[1:]:
-    port = int(sys.argv[1]) # CLI Parameter port if exists
+    try:
+      port = int(sys.argv[1]) # CLI Parameter port if exists
+    except:
+      print("Error: check your parameter.")
+      quit()
+
   else:
     port = 13579 # Default port
 
